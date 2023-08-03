@@ -79,7 +79,7 @@ export default function AdminPanel() {
     set_error_message("");
     set_message("");
     let check_form = Object.values(admin_data).filter((value) => typeof value === 'string' && value.length < 4);
-    if (check_form) {
+    if (check_form.length > 0) {
       set_error_message("Username, email or password cannot contain less than 4 characters")
       return
     }

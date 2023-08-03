@@ -1,4 +1,5 @@
 import { prisma } from "@/utils/seed";
+import { User } from "next-auth";
 import NextAuth, { CookiesOptions, NextAuthOptions } from "next-auth";
 import argon2 from "argon2";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -16,7 +17,27 @@ export const authOptions: NextAuthOptions = {
       password: {label: "Password", type: "password"},
     },
     async authorize(credentials) {
-      
+      let username = credentials?.username;
+      let password = credentials?.password;
+      let user = await prisma.user_credentials.findFirst({
+          where:{
+            username: credentials?.username
+          }
+        });
+      if (!user) {
+          return null
+        }
+      if (username && password && await argon2.verify(user.password, password)) {
+          let user_query = await prisma.users.findFirst({
+            where: {
+              id: user.user_id
+            }
+          });
+          return {id: user.id.toString(), name: user.username, email: user.email}
+        } else {
+          // Passwords dont match
+          return null
+        }
     }
   })
   ],
@@ -27,6 +48,6 @@ export const authOptions: NextAuthOptions = {
   debug: process.env.NODE_ENV === "development",
 };
 
-const handler = NextAuth(authOptions);
+export default NextAuth(authOptions);
 
-export { handler as GET, handler as POST }
+//export { handler as GET, handler as POST }
