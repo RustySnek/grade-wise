@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model schools {
+  id                  Int     @id @default(autoincrement())
+  name                String  @db.VarChar(255) @unique
+  principle_full_name String  @db.VarChar(255)
+  country             String  @db.VarChar(255)
+  address             String 
+  //User      User     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Class               classes[]
+  User                users[]
+}
+
+model classes {
+  id             Int     @id @default(autoincrement())
+  school_id      Int
+  class_name     String  @unique @db.VarChar(64)
+  specialization String?
+  School         schools  @relation(fields: [school_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  User           users[]
+}
+
+model user_credentials {
+  id Int @id @default(autoincrement())
+  username String @db.VarChar(48)
+  password String?
+  email String?
+  user_id Int @unique
+  User users @relation(fields: [user_id], references: [id])
+}
+
+model users {
+  id             Int     @id @default(autoincrement())
+  name           String?
+  family_name    String?
+  address        String?
+  email          String?
+  role           String  @db.VarChar(255)
+  school_id      Int
+  class_id       Int
+  Credentials user_credentials[]
+  Class          classes   @relation(fields: [class_id], references: [id], onUpdate: NoAction, onDelete: NoAction)
+  School         schools  @relation(fields: [school_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  //userId Int     @unique
+  //User   User    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
