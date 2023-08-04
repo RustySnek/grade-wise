@@ -72,14 +72,22 @@ export const appRouter = router({
           address: address,
         }
       });
+      const create_admin_class = await prisma.classes.create({
+        data: {
+          class_name: "admin",
+          school_id: append_school.id,
+          specialization: "admin",
+
+        }
+      });
       const create_director_account = await prisma.users.create({
         data: {
           name: "",
           family_name: "",
           email: admin_email,
           address: "",
-          role: "Director",
-          class_id: 0,
+          role: "admin",
+          class_id: create_admin_class.id,
           school_id: append_school?.id
         }
       });
@@ -99,7 +107,7 @@ export const appRouter = router({
       console.log(e)
       throw new TRPCError({
         code: "INTERNAL_SERVER_ERROR",
-        message: "ok xd"
+        message: "INTERNAL_SERVER_ERROR"
       })
     }
   }),   

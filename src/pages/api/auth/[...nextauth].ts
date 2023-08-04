@@ -7,6 +7,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Credentials from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
+type CustomUser = User & {
+  role: string;
+}
+
 export const authOptions: NextAuthOptions = { 
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -33,7 +37,10 @@ export const authOptions: NextAuthOptions = {
               id: user.user_id
             }
           });
-          return {id: user.id.toString(), name: user.username, email: user.email}
+          if (user_query) {
+            return {id: user.id.toString(), name: user_query.name, email: user_query.email, role: user_query.role} as CustomUser
+          }
+          return null
         } else {
           // Passwords dont match
           return null
@@ -43,6 +50,22 @@ export const authOptions: NextAuthOptions = {
   ],
   session: {
     strategy: "jwt",
+  },
+  jwt: {
+    maxAge: 60*60,
+  },
+  callbacks: {
+    async jwt({user, token}) {
+      if (user) token.role = user.role
+      return token
+    },
+    async session({session, token}) {
+      if (!session?.user) {
+        return session
+      }
+      session.user.role = token.role;
+      return session;
+    }
   },
   secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === "development",

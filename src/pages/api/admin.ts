@@ -9,7 +9,7 @@ export default async function handler(
 ) {
   const session = await getSession({ req });
 
-  if (!session || !session.user) {
+  if (!session || !session.user || !(new Date(session.expires) <= new Date())) {
     // If there's no session or the user is not an admin, respond with a 403 Forbidden status
     return res.status(403).json({ error: 'Access forbidden' });
   }
