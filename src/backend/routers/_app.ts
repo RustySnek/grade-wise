@@ -6,6 +6,28 @@ import argon2 from "argon2";
 import { TRPCError } from '@trpc/server';
 
 export const appRouter = router({
+    "school-data": procedure
+    .input(
+      z.object({
+        user_id: z.number()
+    })
+  ).query(async (opts) => {
+    const {user_id} = opts.input;
+    const user = await prisma.users.findFirst({
+      where: {
+        id: user_id
+      }
+    });
+    if (!user) {
+      return null
+    }
+    const school = await prisma.schools.findFirst({
+      where: {
+        id: user.school_id
+      }
+    });
+    return {school: school}
+  }),
     "school-availability": procedure
     .input(
       z.object({

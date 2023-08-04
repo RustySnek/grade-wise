@@ -7,8 +7,9 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Credentials from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
-type CustomUser = User & {
-  role: string;
+export type CustomUser = User & {
+  role: string | undefined | null;
+  id: number
 }
 
 export const authOptions: NextAuthOptions = { 
@@ -56,7 +57,10 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async jwt({user, token}) {
-      if (user) token.role = user.role
+      if (user) {
+        token.role = user.role
+        token.id = +user.id
+      }
       return token
     },
     async session({session, token}) {
@@ -64,6 +68,7 @@ export const authOptions: NextAuthOptions = {
         return session
       }
       session.user.role = token.role;
+      session.user.id = token.id
       return session;
     }
   },

@@ -1,49 +1,43 @@
 'use client'
 
-import with_admin_session from "@/utils/admin_session";
 import { getToken } from "next-auth/jwt";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router"
-import { FormEvent, FormEventHandler } from "react";
+import { FormEvent, FormEventHandler, useState } from "react";
+import SchoolSettings from "./_school_settings";
+import { CustomUser } from "../api/auth/[...nextauth]";
 
 export default function RegisterPage() {
   const router = useRouter();
+  const [option, set_option] = useState("");
   const session = useSession();
-  if (session) {
-    console.log(session)
-  }
   if (!session || session.status !=="authenticated") {
     return "Access denied"
   }
-  const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const username = data.get("username")?.toString();
-    const password = data.get("password")?.toString();
-    const response = await fetch('/api/register', {
-      method: "POST",
-      headers: {
-        "Content-Type": 'application/json'
-      },
-      body: JSON.stringify({username:username, password:password})
-    })
-    const user_info = await response.json();
-    console.log(user_info);
-    router.push('/login');
-    
-  }
+  const user = session.data.user;
   return (
-  <form onSubmit={handleRegister}>
-      <label>
-        Email:
-        <input className="bg-black" minLength={4} type="text" name="username" />
-      </label>
-      <label>
-        Password:
-        <input className="bg-black" minLength={4} type="password" name="password" />
-      </label>
-      <button type="submit">Sign In</button>
-    </form>
-
+    <main className="flex flex-row ">
+      <div className=" h-screen w-1/6 space-y-3 pl-1 pr-4 pt-8 flex transition flex-col flex-wrap bg-opacity-90 rounded-r-2xl justify-start items-start bg-[#121212]  opacity-70">
+        <button
+          onClick={() => set_option("school_settings")}
+          className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">
+          School settings</button>
+        <button 
+          onClick={() => set_option("append_class")}
+          className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">
+          Create a new class</button> 
+        <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
+        <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
+        <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
+        <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
+      </div>
+      {
+        option === 'school_settings' ? (
+          <SchoolSettings user_id={user.id}/>
+        ) : option === 'append_class' ? (
+          <p>Showing append class menu</p>
+        ) : null
+      }
+    </main>
   );
 }
