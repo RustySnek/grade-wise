@@ -6,6 +6,7 @@ import { useRouter } from "next/router"
 import { FormEvent, FormEventHandler, useState } from "react";
 import SchoolSettings from "./_school_settings";
 import { CustomUser } from "../api/auth/[...nextauth]";
+import MassImport from "./_mass_import";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -26,7 +27,10 @@ export default function RegisterPage() {
           onClick={() => set_option("append_class")}
           className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">
           Create a new class</button> 
-        <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
+        <button 
+          onClick={() => set_option("import")} 
+          className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">
+          Mass Import</button> 
         <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
         <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
         <button className="rounded-lg bg-[#1f1f1f] h-8 transition hover:brightness-125 w-full">School settings</button> 
@@ -36,7 +40,9 @@ export default function RegisterPage() {
           <SchoolSettings user_id={user.id}/>
         ) : option === 'append_class' ? (
           <p>Showing append class menu</p>
-        ) : null
+        ) : option === 'import' ? (
+          <MassImport/>
+        ): null
       }
     </main>
   );

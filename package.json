@@ -23,6 +23,7 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
+    "fs": "^0.0.1-security",
     "next": "13.4.12",
     "next-auth": "^4.22.3",
     "postcss": "8.4.27",
@@ -33,6 +34,8 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/formidable": "^3.4.0",
+    "formidable": "^2.1.2",
     "prisma": "^5.1.1"
   }
 }

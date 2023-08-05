@@ -1,0 +1,424 @@
+name,surname,address,country,email,class,specialization
+Albert,Santoro,2334 Nantucket Drive,Sint Maarten (Dutch part),Albert.Santoro@email.mail,1A,IT
+Leonardo,Moran,26 Garfield Street,Yemen,Leonardo.Moran@email.mail,1A,IT
+Jeffrey,Vallejos,467 Biscayne Avenue Northwest,Turkmenistan,Jeffrey.Vallejos@email.mail,1A,IT
+Mary,Smith,1495 Snell Boulevard,Jersey,Mary.Smith@email.mail,1A,IT
+Georgiana,Temple,35 Leominster Road,Argentina,Georgiana.Temple@email.mail,1A,IT
+Anthony,Abbott,549 Elysian Fields Road,Belgium,Anthony.Abbott@email.mail,1A,IT
+Jean,Kline,913 Fallview Trail,Finland,Jean.Kline@email.mail,1A,IT
+Liliana,Rose,607 North 46th Avenue,Equatorial Guinea,Liliana.Rose@email.mail,1A,IT
+Charles,Issa,152 Holly Court,Russian Federation,Charles.Issa@email.mail,1A,IT
+Mildred,Mahaffey,1644 Queenstown Road,Ecuador,Mildred.Mahaffey@email.mail,1A,IT
+Madeleine,Wolff,1809 Hughes Street,Côte d'Ivoire,Madeleine.Wolff@email.mail,1A,IT
+Luis,Howell,3024 24th Street Northeast,New Zealand,Luis.Howell@email.mail,1A,IT
+Florence,Johnson,Tyndall Drive,Kuwait,Florence.Johnson@email.mail,1A,IT
+Brenda,Back,3114 US Highway 98,Lebanon,Brenda.Back@email.mail,1A,IT
+Ruben,Clark,353 O Street Southwest,Denmark,Ruben.Clark@email.mail,1A,IT
+Hildegard,Chu,5113 Southeast 51st Street,Norfolk Island,Hildegard.Chu@email.mail,1A,IT
+Leslie,Howell,13417 West Marlette Court,France,Leslie.Howell@email.mail,1A,IT
+Claudia,Smith,1601 Algonquin Parkway,Kenya,Claudia.Smith@email.mail,1A,IT
+Bailey,Burgos,16910 Alpine Drive,Austria,Bailey.Burgos@email.mail,1A,IT
+Jetta,French,4617 East 3rd Street,Bulgaria,Jetta.French@email.mail,1A,IT
+Dorothy,Carroll,2206 Skidaway Road,Réunion,Dorothy.Carroll@email.mail,1A,IT
+Charles,Woodard,2305 Ranchland Drive,Croatia,Charles.Woodard@email.mail,1A,IT
+Christine,Ocegueda,2186 Knollwood Drive,Morocco,Christine.Ocegueda@email.mail,1A,IT
+Arline,Hardiman,14 Hillside Terrace,Brazil,Arline.Hardiman@email.mail,1A,IT
+Debra,Pang,9331 Edison Road,Seychelles,Debra.Pang@email.mail,1A,IT
+Ashley,Dameron,1900 West Virginia Avenue Northeast,Sweden,Ashley.Dameron@email.mail,1A,IT
+Richard,Moreno,4770 Balboa Way,Switzerland,Richard.Moreno@email.mail,1A,IT
+Kimberly,Mcauley,8801 Rosshire Drive,Cabo Verde,Kimberly.Mcauley@email.mail,1A,IT
+Katherine,Crouse,2815 Blueridge Place,Algeria,Katherine.Crouse@email.mail,1A,IT
+George,Peterson,24 Lambert Street,India,George.Peterson@email.mail,1A,IT
+Nathan,Jean,16 Harlow Road,Anguilla,Nathan.Jean@email.mail,1B,Biology
+John,Gunter,631 West 32nd Avenue,Bulgaria,John.Gunter@email.mail,1B,Biology
+Andrew,King,1002 Cedar Ridge Court,"Virgin Islands, U.S.",Andrew.King@email.mail,1B,Biology
+Robert,Kercy,6286 West Louise Drive,Guatemala,Robert.Kercy@email.mail,1B,Biology
+Johanne,Wetmore,302 Depot Road,Falkland Islands (Malvinas),Johanne.Wetmore@email.mail,1B,Biology
+Michael,Walker,275 Henry Street,Senegal,Michael.Walker@email.mail,1B,Biology
+Robert,Diaz,1303 Buckingham Court,United States Minor Outlying Islands,Robert.Diaz@email.mail,1B,Biology
+Donald,Nicholas,2209 Florida Avenue,Falkland Islands (Malvinas),Donald.Nicholas@email.mail,1B,Biology
+David,Schwebach,1606 Trevilian Way,Holy See (Vatican City State),David.Schwebach@email.mail,1B,Biology
+Juan,Garrity,20 Hacker Street,Norway,Juan.Garrity@email.mail,1B,Biology
+Robert,Horton,4001 Anderson Road,Mexico,Robert.Horton@email.mail,1B,Biology
+Rogelio,Price,775 47th Street,Angola,Rogelio.Price@email.mail,1B,Biology
+Randy,Mahan,1644 New Jersey Avenue Northwest,Bahamas,Randy.Mahan@email.mail,1B,Biology
+Bobby,Marshall,511 Norton Avenue,Serbia,Bobby.Marshall@email.mail,1B,Biology
+George,Greenspan,17109 Guava Avenue,Zimbabwe,George.Greenspan@email.mail,1B,Biology
+Shawn,Kaua,6419 8th Street Northwest,South Sudan,Shawn.Kaua@email.mail,1B,Biology
+Stella,Lajoie,12901 Mission Circle,India,Stella.Lajoie@email.mail,1B,Biology
+Julio,Bryce,1313 North Road,Israel,Julio.Bryce@email.mail,1B,Biology
+Robert,French,928 Wright Avenue,Sri Lanka,Robert.French@email.mail,1B,Biology
+Sam,Nunamaker,2835 Southwest 78th Street,Netherlands,Sam.Nunamaker@email.mail,1B,Biology
+Robert,Asakura,4513 Beth Manor Drive,San Marino,Robert.Asakura@email.mail,1B,Biology
+Hugo,Allen,517 Glenpark Drive,Japan,Hugo.Allen@email.mail,1B,Biology
+Michael,Falco,60 Willow Lakes Drive,Brunei Darussalam,Michael.Falco@email.mail,1B,Biology
+Glenda,Ketter,3024 24th Street Northeast,Yemen,Glenda.Ketter@email.mail,1B,Biology
+Larue,Benjamen,45 Heathcote Circle,Honduras,Larue.Benjamen@email.mail,1B,Biology
+Amanda,Dexter,424 North Powderhorn Drive,Ukraine,Amanda.Dexter@email.mail,1B,Biology
+Rosemary,Peterson,1990 Poplar Ridge Road,Costa Rica,Rosemary.Peterson@email.mail,1B,Biology
+Frank,Campos,180 Intervale Avenue,"Iran, Islamic Republic of",Frank.Campos@email.mail,1B,Biology
+Myra,Paradis,517 Retford Drive,Samoa,Myra.Paradis@email.mail,1B,Biology
+Janet,Khan,900 North Leverett Avenue,Bahrain,Janet.Khan@email.mail,1B,Biology
+Kim,Hackler,6862 North 44th Avenue,French Southern Territories,Kim.Hackler@email.mail,1B,Biology
+Teresa,Finnell,1106 Homer Avenue,Israel,Teresa.Finnell@email.mail,1B,Biology
+Sue,Gostlin,410 Fairlea Drive,Hong Kong,Sue.Gostlin@email.mail,1C,Chemistry
+Mary,Childs,1514 Canton Avenue,Botswana,Mary.Childs@email.mail,1C,Chemistry
+Jeffery,Bernier,1960 Sigfrid Court,Lebanon,Jeffery.Bernier@email.mail,1C,Chemistry
+Anna,Hoffer,65 Jones Lane,Cocos (Keeling) Islands,Anna.Hoffer@email.mail,1C,Chemistry
+Douglas,Spencer,110 Elmwood Avenue,Sao Tome and Principe,Douglas.Spencer@email.mail,1C,Chemistry
+Christine,Heath,4714 Narrow Lane Road,Guatemala,Christine.Heath@email.mail,1C,Chemistry
+Christina,Sears,125 Heritage Way,Sint Maarten (Dutch part),Christina.Sears@email.mail,1C,Chemistry
+Eric,Davis,5788 Cane Ridge Road,Georgia,Eric.Davis@email.mail,1C,Chemistry
+Deborah,Garcia,1709 West Market Street,Burkina Faso,Deborah.Garcia@email.mail,1C,Chemistry
+Billy,Hartman,1123 Ardee Avenue,Philippines,Billy.Hartman@email.mail,1C,Chemistry
+Jeffrey,Mosley,6703 Bluffview Circle,Belize,Jeffrey.Mosley@email.mail,1C,Chemistry
+Marvin,Haralson,3808 Richland Avenue,Monaco,Marvin.Haralson@email.mail,1C,Chemistry
+Robert,Johnson,1695 Archer Street,Norfolk Island,Robert.Johnson@email.mail,1C,Chemistry
+William,Dwyer,8133 Meadowgreen Place,South Sudan,William.Dwyer@email.mail,1C,Chemistry
+Wayne,Spencer,112 West Center Street,Åland Islands,Wayne.Spencer@email.mail,1C,Chemistry
+Bernard,Simonson,5603 Dune Creek Trail,Malawi,Bernard.Simonson@email.mail,1C,Chemistry
+Alexia,Garcia,5815 West Del Lago Circle,Spain,Alexia.Garcia@email.mail,1C,Chemistry
+Kevin,Coller,1954 Wilson Court,Colombia,Kevin.Coller@email.mail,1C,Chemistry
+Connie,Jackson,1720 Quacco Road,Finland,Connie.Jackson@email.mail,1C,Chemistry
+William,Winter,623 Rhode Island Avenue Northwest,Myanmar,William.Winter@email.mail,1C,Chemistry
+Mamie,Adams,5906 Milton Avenue,Malawi,Mamie.Adams@email.mail,1C,Chemistry
+Sherry,Blalock,6902 West Sherri Jean Lane,Brunei Darussalam,Sherry.Blalock@email.mail,1C,Chemistry
+Christopher,Gates,1313 Paulson Way,Ukraine,Christopher.Gates@email.mail,1C,Chemistry
+James,Smith,3901 West End Avenue,Faroe Islands,James.Smith@email.mail,1C,Chemistry
+David,Broussard,219 Shana Road,Gibraltar,David.Broussard@email.mail,2A,IT
+Donna,Carpenter,6069 Jay Street,Russian Federation,Donna.Carpenter@email.mail,2A,IT
+Alba,Douglas,1233 Paradise Lane,Slovenia,Alba.Douglas@email.mail,2A,IT
+Harold,Jaeger,1772 150th Avenue,French Polynesia,Harold.Jaeger@email.mail,2A,IT
+Deandre,Henry,3551 North Georgetown Drive,Chad,Deandre.Henry@email.mail,2A,IT
+Alicia,Graves,2604 13th Street,British Indian Ocean Territory,Alicia.Graves@email.mail,2A,IT
+Richard,Kane,12438 West 83rd Avenue,American Samoa,Richard.Kane@email.mail,2A,IT
+Teresa,Adell,5309 Darling Hill Road,Austria,Teresa.Adell@email.mail,2A,IT
+Frances,Weiss,5600 Carmichael Road,Belarus,Frances.Weiss@email.mail,2A,IT
+Carrie,Waller,6500 Thurlow Place,Mayotte,Carrie.Waller@email.mail,2A,IT
+Shawn,Coulter,7250 Urban Drive,Madagascar,Shawn.Coulter@email.mail,2A,IT
+Molly,Staton,3500 15th Street Northeast,Rwanda,Molly.Staton@email.mail,2A,IT
+Rose,Williams,1637 Delphil Street,Bouvet Island,Rose.Williams@email.mail,2A,IT
+Christina,Turrey,491 Arabian Way,Mozambique,Christina.Turrey@email.mail,2A,IT
+Lynnette,Bethune,42 Lake Lane,Lebanon,Lynnette.Bethune@email.mail,2A,IT
+Octavio,Hale,12403 Deerfield Road,Saint Kitts and Nevis,Octavio.Hale@email.mail,2A,IT
+Kathryn,Smith,5514 West Altadena Avenue,Réunion,Kathryn.Smith@email.mail,2A,IT
+Crystal,Coburn,2802 US Highway 98,"Bolivia, Plurinational State of",Crystal.Coburn@email.mail,2A,IT
+Loretta,Hodges,8347 Ames Way,Namibia,Loretta.Hodges@email.mail,2A,IT
+Katherine,Gering,1718 Underwood Road,Fiji,Katherine.Gering@email.mail,2A,IT
+Benita,Watkins,314 Mesa Street,Sao Tome and Principe,Benita.Watkins@email.mail,2A,IT
+Michael,Lewis,4400 Vaneto Drive,"Korea, Republic of",Michael.Lewis@email.mail,2A,IT
+Tyler,Falk,3034 Mica Street,United States,Tyler.Falk@email.mail,2A,IT
+James,Mclamb,145 Grau Drive,Gabon,James.Mclamb@email.mail,2A,IT
+Earnest,Crockette,8700 Seaton Boulevard,China,Earnest.Crockette@email.mail,2A,IT
+Greta,Rivers,2638 East 40th Plaza,Kiribati,Greta.Rivers@email.mail,2A,IT
+Johnathan,Turner,981 Groton Long Point Road,Canada,Johnathan.Turner@email.mail,2A,IT
+Cynthia,Hunter,2313 Mansfield Avenue,Mongolia,Cynthia.Hunter@email.mail,2A,IT
+Kylee,Byrnes,4385 Wares Ferry Road,El Salvador,Kylee.Byrnes@email.mail,2A,IT
+Faith,Verdino,65 Lowry Road,Eswatini,Faith.Verdino@email.mail,2B,Biology
+Aaron,Leedy,5792 Owl Hill Avenue,Estonia,Aaron.Leedy@email.mail,2B,Biology
+Sybil,Williams,3607 R Street Northwest,New Caledonia,Sybil.Williams@email.mail,2B,Biology
+Randall,Heim,30 Curtis Road,Pakistan,Randall.Heim@email.mail,2B,Biology
+Terry,Kline,2245 Southwest Binkley Street,Dominica,Terry.Kline@email.mail,2B,Biology
+Clarence,Island,7105 Tanager Avenue,Poland,Clarence.Island@email.mail,2B,Biology
+Sharyl,Wood,6702 Johnny Mercer Boulevard,Barbados,Sharyl.Wood@email.mail,2B,Biology
+Stacia,Wadkins,3008 Russell Street,Mayotte,Stacia.Wadkins@email.mail,2B,Biology
+Matthew,Faughnan,16020 North 69th Avenue,Monaco,Matthew.Faughnan@email.mail,2B,Biology
+Virgilio,Fabre,8007 Kendrick Crossing Lane,Grenada,Virgilio.Fabre@email.mail,2B,Biology
+Anna,Rohan,8010 Holland Court,"Saint Helena, Ascension and Tristan da Cunha",Anna.Rohan@email.mail,2B,Biology
+Sandra,Tremblay,6047 Cole Court,Afghanistan,Sandra.Tremblay@email.mail,2B,Biology
+Becky,Dowell,1514 Canton Avenue,Tajikistan,Becky.Dowell@email.mail,2B,Biology
+John,Pitcher,281 MacArthur Boulevard,Isle of Man,John.Pitcher@email.mail,2B,Biology
+Evangeline,Frazier,46710 Crawford Street,French Southern Territories,Evangeline.Frazier@email.mail,2B,Biology
+Sheila,Little,26466 Mockingbird Lane,Belize,Sheila.Little@email.mail,2B,Biology
+Irene,Unger,1324 Beddington Park,Mexico,Irene.Unger@email.mail,2B,Biology
+Dorothy,Williams,9302 West 58th Avenue,Malta,Dorothy.Williams@email.mail,2B,Biology
+Helen,Scott,6729 North 54th Avenue,"Virgin Islands, British",Helen.Scott@email.mail,2B,Biology
+Pamela,Rodriguez,800 West Street,Ethiopia,Pamela.Rodriguez@email.mail,2B,Biology
+James,Hayes,6725 Pamela Court,"Micronesia, Federated States of",James.Hayes@email.mail,2B,Biology
+Kimberly,Lancaster,505 North Washington Avenue,Belize,Kimberly.Lancaster@email.mail,2B,Biology
+Adolfo,Pan,5921 Ashwood Bluff Drive,Viet Nam,Adolfo.Pan@email.mail,2B,Biology
+Brenda,Carr,116 Queens Lane,Lao People's Democratic Republic,Brenda.Carr@email.mail,2B,Biology
+Teresa,Pereira,91 Eldridge Street,Pitcairn,Teresa.Pereira@email.mail,2B,Biology
+Margot,Dalton,236 Alden Road,Holy See (Vatican City State),Margot.Dalton@email.mail,2B,Biology
+Emilio,Mcghee,1612 Beech Street,Hong Kong,Emilio.Mcghee@email.mail,2B,Biology
+Charles,Poch,10891 Kamishak Bay Circle,Saint Martin (French part),Charles.Poch@email.mail,2B,Biology
+Rick,Green,6578 Marauder Drive,"Venezuela, Bolivarian Republic of",Rick.Green@email.mail,2B,Biology
+Ann,Yee,817 Nevada Drive Northeast,"Korea, Republic of",Ann.Yee@email.mail,2B,Biology
+Melissa,Lanier,1358 Scenic Avenue,Qatar,Melissa.Lanier@email.mail,2B,Biology
+Phyllis,Skeens,901 Samson Road,Djibouti,Phyllis.Skeens@email.mail,2B,Biology
+Vonda,Parks,7025 Queen Street,Holy See (Vatican City State),Vonda.Parks@email.mail,2B,Biology
+Denise,Camacho,4511 43rd Place Northwest,Christmas Island,Denise.Camacho@email.mail,2C,Chemistry
+Terri,Meyers,1627 Connecticut Avenue Northwest,Zimbabwe,Terri.Meyers@email.mail,2C,Chemistry
+William,Ramos,1120 Mitchell Young Road,Lao People's Democratic Republic,William.Ramos@email.mail,2C,Chemistry
+Scotty,Aslam,1710 Massachusetts Avenue Southeast,Samoa,Scotty.Aslam@email.mail,2C,Chemistry
+Marni,Tucker,8726 Downey Road,Saint Martin (French part),Marni.Tucker@email.mail,2C,Chemistry
+William,Scott,31250 Courthouse Drive,Ethiopia,William.Scott@email.mail,2C,Chemistry
+Mary,Quigg,42 Lake Lane,Faroe Islands,Mary.Quigg@email.mail,2C,Chemistry
+Florence,Macdonald,2707 Eden Street,Tunisia,Florence.Macdonald@email.mail,2C,Chemistry
+Anne,Curley,809 Blue Ridge Drive,Belarus,Anne.Curley@email.mail,2C,Chemistry
+Kamala,Martin,435 Porter Lake Drive,Denmark,Kamala.Martin@email.mail,2C,Chemistry
+Lucille,Meekins,533 Forest Ridge Court,Dominica,Lucille.Meekins@email.mail,2C,Chemistry
+Hattie,Reed,422 Richmond Street,Ghana,Hattie.Reed@email.mail,2C,Chemistry
+Roger,Christopher,80 South Main Street,Somalia,Roger.Christopher@email.mail,2C,Chemistry
+Dixie,Deitz,6 Oak Street,Saint Barthélemy,Dixie.Deitz@email.mail,2C,Chemistry
+Ronald,Butler,1801 Dodge Trail,Slovakia,Ronald.Butler@email.mail,2C,Chemistry
+Bobby,Warren,2021 West Burnett Avenue,"Venezuela, Bolivarian Republic of",Bobby.Warren@email.mail,2C,Chemistry
+Roosevelt,Schwartz,8404 South Villa Avenue,"Bonaire, Sint Eustatius and Saba",Roosevelt.Schwartz@email.mail,2C,Chemistry
+James,Brignac,1738 Annabellas Drive,Togo,James.Brignac@email.mail,2C,Chemistry
+Joanne,Wicks,2750 Gilmore Lane,Canada,Joanne.Wicks@email.mail,2C,Chemistry
+Whitney,Grimsley,5209 North Dewey Avenue,"Iran, Islamic Republic of",Whitney.Grimsley@email.mail,2C,Chemistry
+Helen,Judkins,1236 Southwest 49th Street,Mauritania,Helen.Judkins@email.mail,2C,Chemistry
+Laurie,Johnson,11507 East Neville Avenue,Hong Kong,Laurie.Johnson@email.mail,2C,Chemistry
+Patti,Rooney,2845 Zelda Road,Cook Islands,Patti.Rooney@email.mail,2C,Chemistry
+Chris,Withers,2034 Fairfax Road,Chad,Chris.Withers@email.mail,2C,Chemistry
+James,Baker,903 Burton Avenue,Viet Nam,James.Baker@email.mail,2C,Chemistry
+George,James,2150 Yarbrough Street,Iraq,George.James@email.mail,3A,IT
+Donald,Lattimer,3652 East Blue Stone Drive,Hungary,Donald.Lattimer@email.mail,3A,IT
+Edwin,Mason,6108 Iris Way,Russian Federation,Edwin.Mason@email.mail,3A,IT
+Amanda,Malave,8509 Olde Gate,Portugal,Amanda.Malave@email.mail,3A,IT
+Kathy,Marshall,1001 Northwest 104th Street,Angola,Kathy.Marshall@email.mail,3A,IT
+Rachel,Barriere,2721 Lindsay Avenue,Maldives,Rachel.Barriere@email.mail,3A,IT
+Daniel,Akers,3413 Pheasant Run Road,French Polynesia,Daniel.Akers@email.mail,3A,IT
+Sasha,Roger,3208 Southwest 65th Street,Comoros,Sasha.Roger@email.mail,3A,IT
+Frank,Thompson,13116 West Palo Verde Drive,Bahrain,Frank.Thompson@email.mail,3A,IT
+Barbara,Walsh,713 Flight Avenue,Saint Barthélemy,Barbara.Walsh@email.mail,3A,IT
+Robert,Dooley,460 Woodbridge Street,Poland,Robert.Dooley@email.mail,3A,IT
+Karen,Jones,1622 Orchard Avenue,Bahrain,Karen.Jones@email.mail,3A,IT
+George,Birch,122 40th Avenue North,Malawi,George.Birch@email.mail,3A,IT
+Mark,Zechman,51035 Conifer Drive,Djibouti,Mark.Zechman@email.mail,3A,IT
+Amalia,Harrison,5458 Zephyr Court,Guernsey,Amalia.Harrison@email.mail,3A,IT
+Ronald,Hensley,43626 Bryant Street,"Virgin Islands, U.S.",Ronald.Hensley@email.mail,3A,IT
+Laura,Ferris,5264 Shafter Avenue,Qatar,Laura.Ferris@email.mail,3A,IT
+Theresa,Smith,4511 43rd Place Northwest,Turks and Caicos Islands,Theresa.Smith@email.mail,3A,IT
+Delores,Launderville,241 Braxton Way,Holy See (Vatican City State),Delores.Launderville@email.mail,3A,IT
+Michael,Dotson,10632 Admiral Court,Libya,Michael.Dotson@email.mail,3A,IT
+Jane,King,163 Highwood Drive,Mauritania,Jane.King@email.mail,3A,IT
+Debbie,Burton,9403 Fairground Road,Dominican Republic,Debbie.Burton@email.mail,3A,IT
+Regina,Delacruz,6622 West Altadena Avenue,Lesotho,Regina.Delacruz@email.mail,3A,IT
+Cassie,Draggoo,75 Calfoster Drive,"Moldova, Republic of",Cassie.Draggoo@email.mail,3A,IT
+Leslie,Delvalle,264 River Road,Guatemala,Leslie.Delvalle@email.mail,3B,Biology
+John,Chicas,5109 39th Street Northwest,Chad,John.Chicas@email.mail,3B,Biology
+Terry,Romero,238 West Rock Street,Vanuatu,Terry.Romero@email.mail,3B,Biology
+Lawrence,Browne,50 Winthrop Avenue,Georgia,Lawrence.Browne@email.mail,3B,Biology
+Louella,Shattuck,20 Hacker Street,Saudi Arabia,Louella.Shattuck@email.mail,3B,Biology
+Betty,Hale,2456 22nd Avenue,Trinidad and Tobago,Betty.Hale@email.mail,3B,Biology
+Kelly,Cohen,7703 Laird Street,Samoa,Kelly.Cohen@email.mail,3B,Biology
+Vicki,Alvarez,5116 Emmanuel Avenue,Jersey,Vicki.Alvarez@email.mail,3B,Biology
+Deborah,Rudge,410 West 89th Avenue,Palau,Deborah.Rudge@email.mail,3B,Biology
+Andrew,Lucas,4602 West Luke Avenue,Nicaragua,Andrew.Lucas@email.mail,3B,Biology
+Florence,Preston,3138 Banneker Drive Northeast,Saudi Arabia,Florence.Preston@email.mail,3B,Biology
+Douglas,Colvin,903 Mallard Creek Road,Turks and Caicos Islands,Douglas.Colvin@email.mail,3B,Biology
+Ryan,Shaw,3014 R Street Northwest,Singapore,Ryan.Shaw@email.mail,3B,Biology
+Jerri,Arnold,6716 South Mariposa Lane,Costa Rica,Jerri.Arnold@email.mail,3B,Biology
+Michelle,Inman,8852 Broderick Street,Réunion,Michelle.Inman@email.mail,3B,Biology
+William,Deuell,109 Peter's Quay,British Indian Ocean Territory,William.Deuell@email.mail,3B,Biology
+Jerry,Jones,19259 North 61st Drive,Portugal,Jerry.Jones@email.mail,3B,Biology
+Stewart,Zavala,26 Greenbriar Drive,"Palestine, State of",Stewart.Zavala@email.mail,3B,Biology
+Daniel,Mccready,1139 Addison Street,Panama,Daniel.Mccready@email.mail,3B,Biology
+Dorothy,Schummer,5707 Whispering Hills Boulevard,Libya,Dorothy.Schummer@email.mail,3B,Biology
+Louisa,Galindo,404 Summit Oaks Drive,Marshall Islands,Louisa.Galindo@email.mail,3B,Biology
+William,Tyson,8390 Alkire Street,Morocco,William.Tyson@email.mail,3B,Biology
+Joan,Murch,4001 19th Place Northeast,Cameroon,Joan.Murch@email.mail,3B,Biology
+Katrina,Staab,14300 Leesa Lane,Colombia,Katrina.Staab@email.mail,3B,Biology
+Carolyn,Rahman,2362 Acushnet Avenue,Hong Kong,Carolyn.Rahman@email.mail,3B,Biology
+Owen,Byrd,5514 West Wedington Drive,Mongolia,Owen.Byrd@email.mail,3B,Biology
+Marguerite,Manor,260 Rio Del Mar Boulevard,Indonesia,Marguerite.Manor@email.mail,3B,Biology
+Shirley,Gilmore,55 Sunrise Avenue,Canada,Shirley.Gilmore@email.mail,3B,Biology
+Monroe,Jacobs,130 West Brown Road,Panama,Monroe.Jacobs@email.mail,3B,Biology
+Johnny,Little,8101 Vaughn Road,Lithuania,Johnny.Little@email.mail,3B,Biology
+Anton,Grosvenor,8 Chestnut Street,Barbados,Anton.Grosvenor@email.mail,3B,Biology
+Kenny,Oliver,804 Dry Creek Road,Australia,Kenny.Oliver@email.mail,3B,Biology
+Karl,Cox,6140 Fenton Street,Greece,Karl.Cox@email.mail,3B,Biology
+Carl,Zarate,82 Linnmore Drive,Guernsey,Carl.Zarate@email.mail,3B,Biology
+Jason,Ross,5434 West Beck Lane,India,Jason.Ross@email.mail,3C,Chemistry
+Willie,Smith,2008 Ashton Avenue,Montserrat,Willie.Smith@email.mail,3C,Chemistry
+Richard,Broadnax,417 R Street Northwest,Åland Islands,Richard.Broadnax@email.mail,3C,Chemistry
+Ronald,Rasmussen,1865 North Higley Road,Equatorial Guinea,Ronald.Rasmussen@email.mail,3C,Chemistry
+Robert,Cowell,7711 North 51st Avenue,"Bonaire, Sint Eustatius and Saba",Robert.Cowell@email.mail,3C,Chemistry
+Scott,Grundy,3438 Carlton Avenue,Portugal,Scott.Grundy@email.mail,3C,Chemistry
+Britany,Parihar,3466 Southview Avenue,Malawi,Britany.Parihar@email.mail,3C,Chemistry
+Don,Johnston,220 Avenue B,Brunei Darussalam,Don.Johnston@email.mail,3C,Chemistry
+Paul,Brophy,2543 The Meadows,Costa Rica,Paul.Brophy@email.mail,3C,Chemistry
+Shawn,Favila,1123 Ardee Avenue,Monaco,Shawn.Favila@email.mail,3C,Chemistry
+Sandra,Scheffel,153 Atlantic Avenue,New Zealand,Sandra.Scheffel@email.mail,3C,Chemistry
+Matthew,Bostic,9222 Sandra Grace Road,Sint Maarten (Dutch part),Matthew.Bostic@email.mail,3C,Chemistry
+Eric,Tucker,1243 Doris Avenue,China,Eric.Tucker@email.mail,3C,Chemistry
+Kristen,Brown,223 Main Street,Sao Tome and Principe,Kristen.Brown@email.mail,3C,Chemistry
+Ernest,Cumberledge,595 West 54th Street,Morocco,Ernest.Cumberledge@email.mail,3C,Chemistry
+Daniel,Adams,1330 North Mission Boulevard,French Guiana,Daniel.Adams@email.mail,3C,Chemistry
+Darla,Wilson,1160 North College Avenue,Kuwait,Darla.Wilson@email.mail,3C,Chemistry
+Christopher,Adams,169 Avenida Drive,Vanuatu,Christopher.Adams@email.mail,3C,Chemistry
+Naomi,Leko,3035 South Highway A1A,Papua New Guinea,Naomi.Leko@email.mail,3C,Chemistry
+Susan,Hunter,4444 Hansen Avenue,Heard Island and McDonald Islands,Susan.Hunter@email.mail,3C,Chemistry
+Terry,Johnson,95 Briarwood Drive,Turkmenistan,Terry.Johnson@email.mail,3C,Chemistry
+Sandra,Tucci,15557 Sutter Creek Road,Jamaica,Sandra.Tucci@email.mail,3C,Chemistry
+Dawn,Goldstein,20097 Butterfield Drive,Martinique,Dawn.Goldstein@email.mail,3C,Chemistry
+Peter,Wallace,72 Salmon Road,Liberia,Peter.Wallace@email.mail,3C,Chemistry
+Joseph,Brown,6703 Bluffview Circle,Cocos (Keeling) Islands,Joseph.Brown@email.mail,3C,Chemistry
+Sharen,Hayden,31 Ashworth Street,Dominican Republic,Sharen.Hayden@email.mail,3C,Chemistry
+Peggy,Stone,968 Virginia Avenue,Bahrain,Peggy.Stone@email.mail,3C,Chemistry
+Samantha,Brown,88 Florence Street,Slovenia,Samantha.Brown@email.mail,3C,Chemistry
+Rosemary,Rivera,66 Ocala Drive,Saudi Arabia,Rosemary.Rivera@email.mail,3C,Chemistry
+Willie,Shortridge,3714 John Mallette Drive,Cocos (Keeling) Islands,Willie.Shortridge@email.mail,3C,Chemistry
+Fredrick,Wilk,13417 West Marlette Court,Cayman Islands,Fredrick.Wilk@email.mail,3C,Chemistry
+Winifred,West,404 Ramble Wood Circle,Heard Island and McDonald Islands,Winifred.West@email.mail,3C,Chemistry
+Jodi,Bergstrom,3035 South Highway A1A,Eritrea,Jodi.Bergstrom@email.mail,3C,Chemistry
+Lindsey,Wilson,812 Southwest 151st Street,Puerto Rico,Lindsey.Wilson@email.mail,3C,Chemistry
+Laraine,Schaffer,397 North Main Street,Greece,Laraine.Schaffer@email.mail,4A,IT
+Charles,Milosevic,2708 Riverview Drive,Turkey,Charles.Milosevic@email.mail,4A,IT
+Gordon,Carr,7950 West 51st Avenue,Slovakia,Gordon.Carr@email.mail,4A,IT
+Andrew,Jimenez,3035 Osprey Circle,India,Andrew.Jimenez@email.mail,4A,IT
+Ernest,Salcedo,12330 Old Glenn Highway,Cocos (Keeling) Islands,Ernest.Salcedo@email.mail,4A,IT
+Mary,Marshall,1644 New Jersey Avenue Northwest,Congo,Mary.Marshall@email.mail,4A,IT
+Robert,Cook,190 High Street,Brunei Darussalam,Robert.Cook@email.mail,4A,IT
+Patty,Edwards,12403 Deerfield Road,Greenland,Patty.Edwards@email.mail,4A,IT
+Jeffrey,Davis,7772 West Palmaire Avenue,Senegal,Jeffrey.Davis@email.mail,4A,IT
+Albert,Adams,4728 Rockland Trail,Israel,Albert.Adams@email.mail,4A,IT
+Robert,Woodard,4107 East 68th Avenue,South Sudan,Robert.Woodard@email.mail,4A,IT
+Carita,Miller,22 Gallatin Street Northeast,Sudan,Carita.Miller@email.mail,4A,IT
+Lula,Booker,1122 McDaniel Street,Faroe Islands,Lula.Booker@email.mail,4A,IT
+Mario,Morin,264 Crest Drive,Suriname,Mario.Morin@email.mail,4A,IT
+Delbert,Loos,7905 Old Heady Road,Niue,Delbert.Loos@email.mail,4A,IT
+Gregory,Pittsley,7113 North 69th Avenue,Réunion,Gregory.Pittsley@email.mail,4A,IT
+Gloria,Woodruff,3504 East 16th Avenue,Cameroon,Gloria.Woodruff@email.mail,4A,IT
+Georgia,Miles,3320 Peterkin Avenue,New Zealand,Georgia.Miles@email.mail,4A,IT
+Roger,Cabrera,3612 Jim Robison Drive,Nigeria,Roger.Cabrera@email.mail,4A,IT
+Rocky,Campa,529 Barr Hill Road,United Kingdom,Rocky.Campa@email.mail,4A,IT
+Nakisha,Whitney,1749 Haleys Hope Court,Burkina Faso,Nakisha.Whitney@email.mail,4A,IT
+Marsha,Fortier,9 Thomas Street,Kazakhstan,Marsha.Fortier@email.mail,4A,IT
+Marilyn,Blakney,10700 South Pennsylvania Avenue,Burundi,Marilyn.Blakney@email.mail,4A,IT
+Brian,Gibbs,325 Joseph Circle,Eswatini,Brian.Gibbs@email.mail,4A,IT
+Wan,Giebler,31 Baileys Mills Road,Saint Vincent and the Grenadines,Wan.Giebler@email.mail,4A,IT
+Kenneth,Russell,225 Claude Street,Switzerland,Kenneth.Russell@email.mail,4A,IT
+Bruce,Ford,325 Alexander Drive,South Sudan,Bruce.Ford@email.mail,4A,IT
+Danyell,Epps,6624 Strawberry Lane,Cambodia,Danyell.Epps@email.mail,4A,IT
+Sally,Young,8 Linden Circle,Cuba,Sally.Young@email.mail,4A,IT
+Elton,Diaz,6988 West Blackhawk Drive,Norway,Elton.Diaz@email.mail,4A,IT
+Rosemary,Gillespie,6604 West Montebello Avenue,Egypt,Rosemary.Gillespie@email.mail,4A,IT
+Helen,Costa,29076 Little Big Horn Drive,Lebanon,Helen.Costa@email.mail,4A,IT
+Michelle,Harris,1821 Catalpa Way,Haiti,Michelle.Harris@email.mail,4A,IT
+Crystal,Williams,10383 Eagle River Lane,Libya,Crystal.Williams@email.mail,4A,IT
+Michael,Mills,3116 Northwest 61st Terrace,Egypt,Michael.Mills@email.mail,4A,IT
+Steven,Cyrus,4927 Alvin Sperry Road,Seychelles,Steven.Cyrus@email.mail,4B,Biology
+Maria,Jemmott,2747 68th Avenue,Syrian Arab Republic,Maria.Jemmott@email.mail,4B,Biology
+Shane,Stagner,5516 West Indore Drive,Australia,Shane.Stagner@email.mail,4B,Biology
+Lily,Brooks,2715 Thornbrook Court,Russian Federation,Lily.Brooks@email.mail,4B,Biology
+Ronald,Dominion,1261 Steamboat Drive,Andorra,Ronald.Dominion@email.mail,4B,Biology
+Elizabeth,Lambert,134 Butternut Road,Jersey,Elizabeth.Lambert@email.mail,4B,Biology
+Morris,Smith,31 Yosemite Avenue,Gibraltar,Morris.Smith@email.mail,4B,Biology
+Erma,Prada,3384 North Southridge Drive,Sierra Leone,Erma.Prada@email.mail,4B,Biology
+Michael,Oaks,1559 Alabama Avenue Southeast,Belarus,Michael.Oaks@email.mail,4B,Biology
+Frank,Pryor,4418 Signal Hill Road,Antigua and Barbuda,Frank.Pryor@email.mail,4B,Biology
+Milton,Boyd,241 Methuen Street,Belgium,Milton.Boyd@email.mail,4B,Biology
+Teresa,Mcalvain,5526 Thalman Drive,Sudan,Teresa.Mcalvain@email.mail,4B,Biology
+Mamie,Kirkwood,2809 Rowland Avenue,Ukraine,Mamie.Kirkwood@email.mail,4B,Biology
+Jody,Bridges,3777 Mowry Avenue,Malawi,Jody.Bridges@email.mail,4B,Biology
+Buford,Shaffer,17623 Norma Lane,Nicaragua,Buford.Shaffer@email.mail,4B,Biology
+Robert,Rasor,112 Walnut Street,United States Minor Outlying Islands,Robert.Rasor@email.mail,4B,Biology
+Deena,Lillpop,240 Lynwood Drive,Turks and Caicos Islands,Deena.Lillpop@email.mail,4B,Biology
+Nicholas,Moore,16205 Wind Crest Way,Saudi Arabia,Nicholas.Moore@email.mail,4B,Biology
+Marvin,Allen,711 Tatem Street,Tonga,Marvin.Allen@email.mail,4B,Biology
+Mary,White,1931 West Deane Street,Central African Republic,Mary.White@email.mail,4B,Biology
+Jade,Greenhalge,402 Carlton Place,Saudi Arabia,Jade.Greenhalge@email.mail,4B,Biology
+Henry,Hansen,103 North East Avenue,Nepal,Henry.Hansen@email.mail,4C,Chemistry
+Eugenia,Johnson,5631 West Colter Street,Åland Islands,Eugenia.Johnson@email.mail,4C,Chemistry
+Rita,Kennedy,1 Blue Jay Terrace,Haiti,Rita.Kennedy@email.mail,4C,Chemistry
+Darwin,Menken,619 Colusa Avenue,South Sudan,Darwin.Menken@email.mail,4C,Chemistry
+Jeannette,Nelson,32 Country Club Boulevard,Benin,Jeannette.Nelson@email.mail,4C,Chemistry
+Joycelyn,Barjas,129 Grant Street,Syrian Arab Republic,Joycelyn.Barjas@email.mail,4C,Chemistry
+Joseph,Belmont,46 Lilac Street,Czechia,Joseph.Belmont@email.mail,4C,Chemistry
+William,Manning,8070 Holland Court,Falkland Islands (Malvinas),William.Manning@email.mail,4C,Chemistry
+Toni,Bays,4432 Cobalt Drive,Bulgaria,Toni.Bays@email.mail,4C,Chemistry
+Billy,Jones,4313 Wisconsin Street,Jordan,Billy.Jones@email.mail,4C,Chemistry
+Andrew,Monsivais,1402 North Capitol Street Northwest,Philippines,Andrew.Monsivais@email.mail,4C,Chemistry
+Vernon,Gutierrez,7096 Park Mesa Way,United States Minor Outlying Islands,Vernon.Gutierrez@email.mail,4C,Chemistry
+Brittney,Moyer,207 Spruce Street,Jersey,Brittney.Moyer@email.mail,4C,Chemistry
+Natalie,Walkingstick,210 Lacross Lane,Falkland Islands (Malvinas),Natalie.Walkingstick@email.mail,4C,Chemistry
+Joanna,Smith,217 West Congress Street,Ethiopia,Joanna.Smith@email.mail,4C,Chemistry
+Lloyd,Tullar,720 Southwest 2nd Street,United States Minor Outlying Islands,Lloyd.Tullar@email.mail,4C,Chemistry
+Diane,Campbell,3612 Jim Robison Drive,American Samoa,Diane.Campbell@email.mail,4C,Chemistry
+Margert,Mcbride,9 Kimball Court,Slovenia,Margert.Mcbride@email.mail,4C,Chemistry
+Jenise,Bayne,6233 South Hampton Drive,Paraguay,Jenise.Bayne@email.mail,4C,Chemistry
+Clarence,Schneider,57 Bremer Drive,Mexico,Clarence.Schneider@email.mail,4C,Chemistry
+Erica,Taylor,1164 Middle Turnpike West,"Bolivia, Plurinational State of",Erica.Taylor@email.mail,4C,Chemistry
+Noah,Reeder,2186 Knollwood Drive,Isle of Man,Noah.Reeder@email.mail,4C,Chemistry
+Mary,Steiner,2008 Aberdeen Drive,Turks and Caicos Islands,Mary.Steiner@email.mail,5A,IT
+Richard,Reynolds,5119 West Columbine Drive,"Iran, Islamic Republic of",Richard.Reynolds@email.mail,5A,IT
+Joyce,Aguino,1566 Wingate Park Court,Sri Lanka,Joyce.Aguino@email.mail,5A,IT
+Craig,Brundidge,7841 West Kristal Way,Sudan,Craig.Brundidge@email.mail,5A,IT
+Lonnie,Miller,400 South 28th Street,Saint Vincent and the Grenadines,Lonnie.Miller@email.mail,5A,IT
+Edward,Graham,3620 Colmar Drive,Bermuda,Edward.Graham@email.mail,5A,IT
+Mark,Fawver,9912 Shirewick Way,"Bolivia, Plurinational State of",Mark.Fawver@email.mail,5A,IT
+Deirdre,Knecht,722 Oak Grove Circle,Turkmenistan,Deirdre.Knecht@email.mail,5A,IT
+Marlene,Berning,201 East 9th Avenue,Norway,Marlene.Berning@email.mail,5A,IT
+Michael,Landers,43949 South Moray Street,Northern Mariana Islands,Michael.Landers@email.mail,5A,IT
+Patricia,Williams,218 Oleander Drive,Bahrain,Patricia.Williams@email.mail,5A,IT
+Charles,Ware,83 Kennedy Road,France,Charles.Ware@email.mail,5A,IT
+Melba,Thornsberry,756 Neponset Street,Anguilla,Melba.Thornsberry@email.mail,5A,IT
+Heidi,Jones,212 Ambleside Drive,Papua New Guinea,Heidi.Jones@email.mail,5A,IT
+Robert,Foxx,6021 Yarrow Street,Montserrat,Robert.Foxx@email.mail,5A,IT
+Kathy,Lara,1303 Kearny Street Northeast,Togo,Kathy.Lara@email.mail,5A,IT
+Sharon,Brendel,16 Ambassador Drive,Solomon Islands,Sharon.Brendel@email.mail,5A,IT
+Helen,Morris,7800 River Mist Avenue,Cyprus,Helen.Morris@email.mail,5A,IT
+Donna,Horabik,3138 P Street Northwest,Poland,Donna.Horabik@email.mail,5A,IT
+Elaine,Garcia,13417 West Marlette Court,Chile,Elaine.Garcia@email.mail,5A,IT
+Patrick,Perez,4107 East 68th Avenue,Turks and Caicos Islands,Patrick.Perez@email.mail,5A,IT
+Nicholas,Reager,11 Pine Point Road,Malaysia,Nicholas.Reager@email.mail,5A,IT
+Julie,Carter,2130 Loren Circle,Norway,Julie.Carter@email.mail,5A,IT
+Sonya,Hightower,24 Lawton Road,Jersey,Sonya.Hightower@email.mail,5A,IT
+Francisco,Owens,386 Daniels Road,Guyana,Francisco.Owens@email.mail,5A,IT
+Catherine,Grubbs,65 Hilltop Lane,Bermuda,Catherine.Grubbs@email.mail,5A,IT
+Amanda,Russell,4001 19th Place Northeast,French Polynesia,Amanda.Russell@email.mail,5A,IT
+Sharon,Reed,5600 Carmichael Road,Greece,Sharon.Reed@email.mail,5A,IT
+Henry,Kreisler,5309 Darling Hill Road,Qatar,Henry.Kreisler@email.mail,5A,IT
+Dean,Cocks,9101 Vanguard Drive,Faroe Islands,Dean.Cocks@email.mail,5A,IT
+Willie,Kerr,63 Dorchester Street,Zimbabwe,Willie.Kerr@email.mail,5A,IT
+Jewell,Jones,222 Plymouth Street,Falkland Islands (Malvinas),Jewell.Jones@email.mail,5A,IT
+Lawrence,Smith,1501 New Hampshire Avenue,Latvia,Lawrence.Smith@email.mail,5B,Biology
+Patricia,Morrow,4712 Cherokee Heights Road,Spain,Patricia.Morrow@email.mail,5B,Biology
+Shawn,Nguyen,1508 Massachusetts Avenue Southeast,Cabo Verde,Shawn.Nguyen@email.mail,5B,Biology
+Diana,Fields,329 Mill Road,Dominican Republic,Diana.Fields@email.mail,5B,Biology
+Albert,Wooster,1328 Jenks Avenue,Cook Islands,Albert.Wooster@email.mail,5B,Biology
+Michael,Sheffield,425 Buckhalter Road,American Samoa,Michael.Sheffield@email.mail,5B,Biology
+John,Maertz,507 Castlebrook Drive,Guam,John.Maertz@email.mail,5B,Biology
+Alma,Morse,11140 West 60th Avenue,Senegal,Alma.Morse@email.mail,5B,Biology
+Shawn,Adams,732 Kevin Court,Gibraltar,Shawn.Adams@email.mail,5B,Biology
+Catherine,Allen,6408 Fern Crest Road,Réunion,Catherine.Allen@email.mail,5B,Biology
+George,Mitchell,6431 Shattuck Avenue,Fiji,George.Mitchell@email.mail,5B,Biology
+Jennifer,Mitchell,5631 West Colter Street,Croatia,Jennifer.Mitchell@email.mail,5B,Biology
+Arthur,Stevens,926 Mill Court,France,Arthur.Stevens@email.mail,5B,Biology
+Ruth,Ryan,1430 East Audubon Road,Hong Kong,Ruth.Ryan@email.mail,5B,Biology
+Sherman,Davies,5410 McLean Drive,Lao People's Democratic Republic,Sherman.Davies@email.mail,5B,Biology
+Beatrice,Williamson,900 Dupont Road,"Iran, Islamic Republic of",Beatrice.Williamson@email.mail,5B,Biology
+Ernest,Ford,5701 East Shirley Lane,Azerbaijan,Ernest.Ford@email.mail,5B,Biology
+Anthony,Waller,1026 Orchard Avenue,"Tanzania, United Republic of",Anthony.Waller@email.mail,5B,Biology
+Ralph,Regalado,9 Thomas Street,Turks and Caicos Islands,Ralph.Regalado@email.mail,5B,Biology
+Irene,Terry,4500 Margalo Avenue,Burundi,Irene.Terry@email.mail,5B,Biology
+Carrie,Johnson,270 Tampa Drive,Colombia,Carrie.Johnson@email.mail,5B,Biology
+Janet,Lemieux,4079 North Sunflower Circle,Suriname,Janet.Lemieux@email.mail,5C,Chemistry
+Cecilia,Jones,53 Philip Road,Papua New Guinea,Cecilia.Jones@email.mail,5C,Chemistry
+Paul,Hatch,3904 October Woods Drive,Falkland Islands (Malvinas),Paul.Hatch@email.mail,5C,Chemistry
+Elma,Espinoza,2464 Windham Hill Road,Equatorial Guinea,Elma.Espinoza@email.mail,5C,Chemistry
+Brian,Kelly,840 Inglewood Drive,Burkina Faso,Brian.Kelly@email.mail,5C,Chemistry
+Donna,Frederick,6342 Kendall Street,American Samoa,Donna.Frederick@email.mail,5C,Chemistry
+Henry,Wood,32 Royal Drive,Denmark,Henry.Wood@email.mail,5C,Chemistry
+Mildred,Jones,2324 North Briarwood Lane,United Kingdom,Mildred.Jones@email.mail,5C,Chemistry
+Daniel,Nabors,5113 Village Trace,Slovenia,Daniel.Nabors@email.mail,5C,Chemistry
+Adrienne,Rodriguez,91 Courthouse Drive,Bouvet Island,Adrienne.Rodriguez@email.mail,5C,Chemistry
+Florence,Smitherman,3436 Lexington Road,Zimbabwe,Florence.Smitherman@email.mail,5C,Chemistry
+Zelma,Davis,6436 Stoney Point Road,Monaco,Zelma.Davis@email.mail,5C,Chemistry
+Mary,Scruggs,517 Wesley Avenue,Georgia,Mary.Scruggs@email.mail,5C,Chemistry
+Hector,Farr,2803 River Drive,Cayman Islands,Hector.Farr@email.mail,5C,Chemistry
+Kathrine,Weatherby,227 Danyacrest Drive,Greenland,Kathrine.Weatherby@email.mail,5C,Chemistry
+Richard,Achenbach,34 Holyoke Road,Afghanistan,Richard.Achenbach@email.mail,5C,Chemistry
+Annie,Moore,1364 Capri Drive,Australia,Annie.Moore@email.mail,5C,Chemistry
+Amber,Cvetkovic,269 Park Street,"Congo, The Democratic Republic of the",Amber.Cvetkovic@email.mail,5C,Chemistry
+Idella,Samples,5644 Kipling Parkway,Réunion,Idella.Samples@email.mail,5C,Chemistry
+Robert,Randolph,11225 West 79th Drive,Kiribati,Robert.Randolph@email.mail,5C,Chemistry
+Max,Moreno,4907 Roger Drive,Anguilla,Max.Moreno@email.mail,5C,Chemistry
+Phillip,Pickard,642 Sagamore Drive,New Caledonia,Phillip.Pickard@email.mail,5C,Chemistry
+Marc,Casiano,22 Star Farms Drive,Jamaica,Marc.Casiano@email.mail,5C,Chemistry
+James,Schrader,25 Wendys Way,Costa Rica,James.Schrader@email.mail,5C,Chemistry
+Robert,Toledo,2337 Nebraska Avenue,Cambodia,Robert.Toledo@email.mail,5C,Chemistry
+Richard,Harris,10996 Largo Drive,Viet Nam,Richard.Harris@email.mail,5C,Chemistry
+Christine,Moshier,173 Center Street,Mexico,Christine.Moshier@email.mail,5C,Chemistry
