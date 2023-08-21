@@ -11,46 +11,95 @@ datasource db {
 }
 
 model schools {
-  id                  Int     @id @default(autoincrement())
-  name                String  @db.VarChar(255) @unique
-  principle_full_name String  @db.VarChar(255)
-  country             String  @db.VarChar(255)
-  address             String 
-  //User      User     @relation(fields: [authorId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  id                  Int              @id @default(autoincrement())
+  name                String           @unique @db.VarChar(255)
+  principle_full_name String           @db.VarChar(255)
+  country             String           @db.VarChar(255)
+  address             String
   Class               classes[]
   User                users[]
+  Subjects            subjects[]
+  class_subjects      class_subjects[]
 }
 
 model classes {
-  id             Int     @id @default(autoincrement())
+  id             Int              @id @default(autoincrement())
   school_id      Int
-  class_name     String  @unique @db.VarChar(64)
-  specialization String?
-  School         schools  @relation(fields: [school_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  class_name     String           @db.VarChar(64)
+  specialization String
+  School         schools          @relation(fields: [school_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
   User           users[]
+  class_subjects class_subjects[]
 }
 
 model user_credentials {
-  id Int @id @default(autoincrement())
-  username String @db.VarChar(48)
-  password String @db.Text
-  email String @db.Text
-  user_id Int @unique
-  User users @relation(fields: [user_id], references: [id])
+  id       Int     @id @default(autoincrement())
+  username String  @db.VarChar(48)
+  password String  @db.Text
+  email    String? @unique @db.Text
+  user_id  Int     @unique
+  User     users   @relation(fields: [user_id], references: [id])
 }
 
 model users {
-  id             Int     @id @default(autoincrement())
-  name           String?
-  family_name    String?
-  address        String?
-  email          String?
-  role           String  @db.VarChar(255)
-  school_id      Int
-  class_id       Int
+  id          Int     @id @default(autoincrement())
+  name        String
+  family_name String
+  address     String?
+  email       String? @unique
+  role        String  @db.VarChar(255)
+  banned      Boolean @default(false)
+
+  school_id   Int
+  class_id    Int
   Credentials user_credentials[]
-  Class          classes   @relation(fields: [class_id], references: [id], onUpdate: NoAction, onDelete: NoAction)
-  School         schools  @relation(fields: [school_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Class       classes            @relation(fields: [class_id], references: [id], onUpdate: NoAction, onDelete: NoAction)
+  School      schools            @relation(fields: [school_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
   //userId Int     @unique
   //User   User    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  teachers    teachers[]
+}
+
+model teachers {
+  id             Int                @id @default(autoincrement())
+  user_id        Int
+  User           users              @relation(fields: [user_id], references: [id])
+  Subjects       teacher_subjects[]
+  class_subjects class_subjects[]
+}
+
+model subjects {
+  id             Int                @id @default(autoincrement())
+  name           String
+  school_id      Int
+  Schools        schools            @relation(fields: [school_id], references: [id])
+  Subjects       teacher_subjects[]
+  class_subjects class_subjects[]
+}
+
+model teacher_subjects {
+  id         Int      @id @default(autoincrement())
+  teacher_id Int
+  subject_id Int
+  Subjects   subjects @relation(fields: [subject_id], references: [id])
+  Teachers   teachers @relation(fields: [teacher_id], references: [id])
+}
+
+model new_users {
+  id              Int    @id @default(autoincrement())
+  temporary_token String @unique
+  user_id         Int    @unique
+}
+
+model class_subjects {
+  id         Int      @id @default(autoincrement())
+  class_id   Int
+  subject_id Int
+  teacher_id Int
+  school_id  Int
+  amount     Int
+  School     schools  @relation(fields: [school_id], references: [id])
+  Class      classes  @relation(fields: [class_id], references: [id])
+  Subject    subjects @relation(fields: [subject_id], references: [id])
+  Teacher    teachers @relation(fields: [teacher_id], references: [id])
 }

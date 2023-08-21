@@ -4,8 +4,15 @@ const nextConfig = {
 }
 
 module.exports = {
-  async headers() {
-    return [];
-  },
+  images: {
+    remotePatterns: [
+      {
+      protocol: "https",
+      hostname: "dummyimage.com",
+      port: "",
+      pathname:"/**"
+    }
+    ]
+  }
   
 }
