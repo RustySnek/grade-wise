@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }: AppProps<{ session: Session }>) => {
     <ErrorBoundary>
 
       <SessionProvider session={pageProps.session}>
-        <main className='w-screen h-screen flex flex-col'>
+        <main className=' flex flex-col'>
           <NavBar />
           <Component {...pageProps} />
 

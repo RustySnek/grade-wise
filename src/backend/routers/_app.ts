@@ -23,6 +23,68 @@ export interface TeacherData {
 }
 
 export const appRouter = router({
+  "set-curriculum": procedure
+    .input(
+      z.object({
+        curriculum: z.record(z.string(), z.object({
+          teacher_id: z.nullable(z.number()),
+          amount: z.number()
+        })),
+        class_ids: z.array(z.number()),
+        school_id: z.number()
+      })
+    ).query(async ({ input }) => {
+      const { curriculum, class_ids, school_id } = input;
+      for (const class_id of class_ids) {
+        Object.entries(curriculum).map(async ([subject, values]) => {
+          if (!values.teacher_id) {
+            return
+          }
+          const exists = await prisma.class_subjects.findFirst({
+            where: {
+              school_id,
+              Class: { id: class_id },
+              Subject: { name: subject },
+              teacher_id: values.teacher_id,
+            }
+          })
+          if (exists) {
+            await prisma.class_subjects.updateMany({
+              where: {
+                school_id,
+                Class: { id: class_id },
+                Subject: { name: subject },
+                teacher_id: values.teacher_id,
+              },
+              data: {
+                amount: values.amount
+              }
+            })
+          } else {
+            const subject_id = await prisma.subjects.findFirst({
+              where: {
+                school_id,
+                name: subject
+              }
+            })
+            if (!subject_id) {
+              return null
+            }
+            await prisma.class_subjects.create({
+              data: {
+                School: { connect: { id: school_id } },
+                Class: { connect: { id: class_id } },
+                Subject: { connect: { id: subject_id.id } },
+                teacher_id: values.teacher_id,
+                amount: values.amount
+              }
+            })
+          }
+        })
+      }
+      return { success: true }
+
+    }),
   "get-available-teacher-subjects": procedure
     .input(
       z.object({

@@ -61,11 +61,10 @@ model users {
 }
 
 model teachers {
-  id             Int                @id @default(autoincrement())
-  user_id        Int
-  User           users              @relation(fields: [user_id], references: [id])
-  Subjects       teacher_subjects[]
-  class_subjects class_subjects[]
+  id       Int                @id @default(autoincrement())
+  user_id  Int
+  User     users              @relation(fields: [user_id], references: [id])
+  Subjects teacher_subjects[]
 }
 
 model subjects {
@@ -101,5 +100,4 @@ model class_subjects {
   School     schools  @relation(fields: [school_id], references: [id])
   Class      classes  @relation(fields: [class_id], references: [id])
   Subject    subjects @relation(fields: [subject_id], references: [id])
-  Teacher    teachers @relation(fields: [teacher_id], references: [id])
 }
