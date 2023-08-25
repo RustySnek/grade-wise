@@ -17,6 +17,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [is_focused, set_is_focused] = useState(false);
+  const [selection, set_selection] = useState(0);
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
     setQuery(newQuery);
@@ -38,13 +39,31 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
   };
 
   const handle_key_press = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "ArrowDown") {
+      set_selection(selection => selection + 1)
+      if (selection >= suggestions.length - 1) {
+        set_selection(selection => selection - 1)
+      }
+      console.log(suggestions[selection], selection)
+    }
+    if (event.key === "ArrowUp") {
+      set_selection(selection => selection - 1)
+      if (selection <= 0) {
+        set_selection(selection => selection + 1)
+      }
+      console.log(suggestions[selection], selection)
+    }
     if (event.key === 'Enter') {
       if (suggestions.length > 0) {
-        handleSelectSubject(suggestions[0]); // Run the function on Enter key press with the first suggestion
+        handleSelectSubject(suggestions[selection]); // Run the function on Enter key press with the first suggestion
+        if (selection - 1 >= 0) {
+          set_selection(selection => selection - 1)
+
+        }
       }
     }
   };
-  const handleSuggestionClick = (e: React.MouseEvent<HTMLLIElement>, subject: string) => {
+  const handleSuggestionClick = (e: React.MouseEvent, subject: string) => {
     e.preventDefault()
     handleSelectSubject(subject);
   };
@@ -54,7 +73,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
       className="flex flex-col text-center relative items-center space-y-7 outline-none"
     >
       <input
-        className="bg-[#1f1f1f] text-center w-16 sm:w-full focus:w-full rounded-2xl outline-none  px-2 py-1"
+        className="bg-[#1f1f1f] text-center w-16 sm:w-full focus:w-full rounded-xl outline-none  px-2 py-1"
         style={is_focused === false ? {} : { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
         type="text"
         placeholder="Search subjects..."
@@ -67,11 +86,23 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
       />
       {
         is_focused === true ?
-          <ul className="bg-[#1f1f1f] rounded-2xl rounded-t-none absolute w-full px-2">
-            {suggestions.sort().slice(0, 5).map((subject, index) => (
-              <li className="hover:cursor-pointer text-center" onMouseDown={(e) => handleSuggestionClick(e, subject)} key={index}>{subject}</li>
-            ))}
-          </ul>
+          <table className="bg-[#1f1f1f] rounded-2xl  rounded-t-none absolute w-full px-2">
+            <tbody>
+              {suggestions.sort().map((subject, index) => (
+                <tr key={index} className="px-2">
+                  <td style=
+                    {
+                      {
+                        backgroundColor: index === selection ? "#2a2a2a" : "#1f1f1f",
+                        borderBottomLeftRadius: index === selection + 3 || index === suggestions.length - 1 && index != selection ? 180 : 0,
+                        borderBottomRightRadius: index === selection + 3 || index === suggestions.length - 1 && index != selection ? 180 : 0
+                      }}
+                    className=" hover:cursor-pointer  py-1 hover:bg-[#2a2a2a] border-t border-t-[#2b2b2b] text-center" onMouseDown={(e) => handleSuggestionClick(e, subject)} key={index}>{subject}</td>
+                </tr>
+              )).slice((selection - 1 > 0 ? selection - 1 : 0), selection + 4)
+              }
+            </tbody>
+          </table>
           : null
       }
     </div>

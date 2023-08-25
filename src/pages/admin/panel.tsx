@@ -24,7 +24,7 @@ export default function RegisterPage() {
   const user = session.data.user;
   return (
     <main className="flex flex-col w-screen">
-      <div className="mt-1 w-full grid grid-cols-6 transition bg-opacity-90 rounded-r-2xl gap-4 items-center bg-[#121212]">
+      <div className="mt-1 w-full grid grid-cols-3 md:grid-cols-6 transition bg-opacity-90 rounded-r-2xl gap-x-4 gap-y-2 items-center bg-[#121212]">
         <button
           onClick={() => set_option("school_settings")}
           className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600"

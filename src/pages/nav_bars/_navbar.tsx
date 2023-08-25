@@ -35,7 +35,7 @@ const NavBar = () => {
           ) : <p>Session doesnt exist</p>
         }
       </div>
-      <button onClick={() => signOut()} className='ml-auto transition hover:brightness-125 font-semibold text-lg px-4 py-2 rounded-2xl bg-red-800'>Sign out</button>
+      <button onClick={() => signOut()} className='ml-auto transition hover:brightness-125 font-semibold text-lg px-4 sm:px-6 md:px-12 py-2 rounded bg-red-800 '>⤷</button>
     </div>
   );
 }
