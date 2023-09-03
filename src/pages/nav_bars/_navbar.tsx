@@ -6,15 +6,17 @@ import { useEffect, useState } from "react";
 import { Session } from "next-auth";
 import AdminNav from "./_admin_nav";
 import StudentNav from "./_student_nav";
+import { useRouter } from "next/router";
 
 const NavBar = () => {
   const [session, set_session] = useState<Session | null>(null);
+  const router = useRouter()
   useEffect(() => {
     (async () => {
       const _session = await getSession();
       set_session(_session)
     })()
-  }, [])
+  }, [router.asPath])
 
   return (
 

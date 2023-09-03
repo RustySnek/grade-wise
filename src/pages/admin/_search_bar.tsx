@@ -18,6 +18,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [is_focused, set_is_focused] = useState(false);
   const [selection, set_selection] = useState(0);
+  const [hover_selection, set_hover_selection] = useState<number | null>(null);
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuery = event.target.value;
     setQuery(newQuery);
@@ -44,14 +46,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
       if (selection >= suggestions.length - 1) {
         set_selection(selection => selection - 1)
       }
-      console.log(suggestions[selection], selection)
     }
     if (event.key === "ArrowUp") {
       set_selection(selection => selection - 1)
       if (selection <= 0) {
         set_selection(selection => selection + 1)
       }
-      console.log(suggestions[selection], selection)
     }
     if (event.key === 'Enter') {
       if (suggestions.length > 0) {
@@ -66,6 +66,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
   const handleSuggestionClick = (e: React.MouseEvent, subject: string) => {
     e.preventDefault()
     handleSelectSubject(subject);
+    if (selection - 1 > 0) {
+      set_selection(selection => selection - 1)
+
+    }
   };
   return (
     <div onFocus={() => set_is_focused(true)}
@@ -90,12 +94,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ subjects, on_select, included_sub
             <tbody>
               {suggestions.sort().map((subject, index) => (
                 <tr key={index} className="px-2">
-                  <td style=
+                  <td
+                    onMouseEnter={() => set_hover_selection(index)}
+                    onMouseLeave={() => set_hover_selection(null)}
+                    style=
                     {
                       {
-                        backgroundColor: index === selection ? "#2a2a2a" : "#1f1f1f",
-                        borderBottomLeftRadius: index === selection + 3 || index === suggestions.length - 1 && index != selection ? 180 : 0,
-                        borderBottomRightRadius: index === selection + 3 || index === suggestions.length - 1 && index != selection ? 180 : 0
+                        backgroundColor: index === selection || index === hover_selection ? "#2a2a2a" : "#1f1f1f",
+                        borderBottomLeftRadius: index === selection + 3 || index === suggestions.length - 1 && index != selection && index != hover_selection ? 180 : 0,
+                        borderBottomRightRadius: index === selection + 3 || index === suggestions.length - 1 && index != selection && index != hover_selection ? 180 : 0
                       }}
                     className=" hover:cursor-pointer  py-1 hover:bg-[#2a2a2a] border-t border-t-[#2b2b2b] text-center" onMouseDown={(e) => handleSuggestionClick(e, subject)} key={index}>{subject}</td>
                 </tr>

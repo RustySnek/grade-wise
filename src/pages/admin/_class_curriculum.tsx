@@ -22,9 +22,11 @@ const ClassCurriculum = () => {
   const [classes, set_classes] = useState<SchoolClass[] | []>([]);
   const [teacher_subjects, set_teacher_subjects] = useState<Record<string, TeacherData[]>>({});
   const [selectedKeys, setSelectedKeys] = useState<Array<number>>([]);
-  const [curriculum_data, set_curriculum_data] = useState<Record<string, CurriculumData>>({});
+  const [curriculum_data, set_curriculum_data] = useState<Record<string, CurriculumData | null>>({});
   const [school_curriculums, set_school_curriculums] = useState<SchoolCurriculum[] | []>([]);
   const [school_id, set_school_id] = useState<number | null>(null);
+  const [response_message, set_response_message] = useState("");
+  const [response_changes, set_response_changes] = useState<Record<string, string[]>>({});
 
   const handle_curriculum_form = (e: ChangeEvent<HTMLSelectElement>) => {
     const subject_name = e.target.name.toString()
@@ -39,25 +41,37 @@ const ClassCurriculum = () => {
   }
   const handle_curriculum_submit = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    set_response_changes({});
+    set_response_message("")
     const class_ids = selectedKeys
     if (!school_id) {
       return null
     }
-    const response = await client["set-curriculum"].query({ curriculum: curriculum_data, class_ids, school_id })
+    const full_curriculum_data = { ...curriculum_data }
+    Object.keys(teacher_subjects).forEach((key) => {
+      if (!Object.keys(curriculum_data).includes(key)) {
+        full_curriculum_data[key] = null
+      }
+    })
+    const response = await client["set-curriculum"].query({ curriculum: full_curriculum_data, class_ids, school_id })
+    set_response_message(response.message);
+    set_response_changes(response.changes)
+
   }
   const handle_subject_amount = (increment_value: number, key: string, e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (!curriculum_data[key]) {
       return null
     }
-    let new_amount = (curriculum_data[key]?.amount + increment_value) || 0 + increment_value
+    let amount = curriculum_data[key]?.amount || 0
+    let new_amount = (amount + increment_value)
     if (new_amount < 0) {
       new_amount = 0
     }
     set_curriculum_data(curriculum_data => ({
       ...curriculum_data,
       [key]: {
-        ...curriculum_data[key],
+        ...curriculum_data[key]!,
         amount: new_amount
       }
     }))
@@ -177,8 +191,22 @@ const ClassCurriculum = () => {
           <button className="px-4 mt-1 py-2 text-xl bg-green-600 rounded-lg" onClick={handle_curriculum_submit}>Submit</button>
 
         </form>
+        {response_message}
+        <div className="text-red-500">{Object.entries(response_changes).map(([key, value], index) => {
+          return (
+            <div>
+              <p key={index}>{key}</p>
+              {Object.values(value).map(value => {
+                return (
+                  <p>{value}</p>
+                )
+              })}
+            </div>
+          );
+        })}
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 

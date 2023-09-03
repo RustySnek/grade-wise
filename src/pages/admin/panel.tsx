@@ -8,6 +8,8 @@ import SchoolSettings from "./_school_settings";
 import ClassCurriculum from "./_class_curriculum"
 import { CustomUser } from "../api/auth/[...nextauth]";
 import MassImport from "./_mass_import";
+import SchoolPeriods from "./_school_periods";
+
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -22,29 +24,25 @@ export default function RegisterPage() {
     return "Access denied"
   }
   const user = session.data.user;
+
+  const NavigationButton = (props: { route: string, label: string }) => {
+    const { route, label } = props
+    return (
+      <button onClick={() => set_option(route)}
+        style={{ borderWidth: option === route ? 2 : 0 }}
+        className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600">{label}</button>
+
+    );
+  }
   return (
     <main className="flex flex-col w-screen">
       <div className="mt-1 w-full grid grid-cols-3 md:grid-cols-6 transition bg-opacity-90 rounded-r-2xl gap-x-4 gap-y-2 items-center bg-[#121212]">
-        <button
-          onClick={() => set_option("school_settings")}
-          className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600"
-          style={{ borderWidth: option === "school_settings" ? 2 : 0 }}>
-          School settings</button>
-        <button
-          onClick={() => set_option("append_class")}
-          style={{ borderWidth: option === "append_class" ? 2 : 0 }}
-          className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600">
-          Create a new class</button>
-        <button
-          onClick={() => set_option("import")}
-          style={{ borderWidth: option === "import" ? 2 : 0 }}
-          className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600">
-          Mass Import</button>
-        <button onClick={() => set_option("curriculum")}
-          style={{ borderWidth: option === "curriculum" ? 2 : 0 }}
-          className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600">Class Curriculum</button>
-        <button className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600">School settings</button>
-        <button className="rounded-lg bg-[#2a2a2a] h-12 transition hover:brightness-125 border-red-600">School settings</button>
+        <NavigationButton label="School Settings" route="school_settings" />
+        <NavigationButton label="Create new class" route="append_class" />
+        <NavigationButton label="Mass Import" route="import" />
+        <NavigationButton label="Class Curriculum" route="curriculum" />
+        <NavigationButton label="School Periods" route="periods" />
+
       </div>
       <div className="mt-4">
         {
@@ -56,7 +54,10 @@ export default function RegisterPage() {
             <MassImport />
           ) : option === 'curriculum' ? (
             <ClassCurriculum />
-          ) : null
+          ) : option === 'periods' ? (
+            <SchoolPeriods />
+          )
+            : null
         }
       </div>
     </main>

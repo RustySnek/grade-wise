@@ -4,7 +4,7 @@ import { prisma } from '../../utils/seed';
 import { NextResponse } from 'next/server';
 import argon2 from "argon2";
 import { TRPCError } from '@trpc/server';
-
+import { DateTime, FixedOffsetZone } from "luxon";
 
 interface ClassData {
   name: string;
@@ -21,68 +21,227 @@ interface SubjectData {
 export interface TeacherData {
   name: string; surname: string; id: number
 }
+export interface SchoolPeriods {
+  start: string, end: string
+}
 
 export const appRouter = router({
+  "remove-period": procedure
+    .input(
+      z.object({
+        school_id: z.number(),
+        period: z.number(),
+      })
+    ).query(async ({ input }) => {
+      const { period, school_id } = input
+      const remove = await prisma.school_periods.deleteMany({
+        where: {
+          school_id,
+          period
+        }
+      })
+    }),
+  "get-school-periods": procedure
+    .input(
+      z.object({
+        school_id: z.number(),
+        timezone: z.string()
+      })
+    ).query(async ({ input }) => {
+      const { school_id, timezone } = input;
+      const response_periods: Record<number, SchoolPeriods> = {}
+      const periods = await prisma.school_periods.findMany({
+        where: {
+          school_id,
+
+        },
+        orderBy: {
+          period: "asc"
+        }
+      })
+      if (!periods) {
+        return null
+      }
+      periods.map((period, idx) => {
+        const fixed_offset = FixedOffsetZone.instance(DateTime.now().setZone(timezone).offset)
+        const start_utc = DateTime.fromISO(period.start.toISOString(), { zone: "utc" })
+
+        const end_utc = DateTime.fromISO(period.end.toISOString(), { zone: "utc" })
+        const start = start_utc.setZone(fixed_offset).toFormat("HH:mm")
+        const end = end_utc.setZone(fixed_offset).toFormat("HH:mm");
+        response_periods[period.period] = { start, end }
+      })
+      return response_periods
+    }),
+  "add-period": procedure
+    .input(
+      z.object({
+        school_id: z.number(),
+        period: z.number(),
+        start_hour: z.string(),
+        period_length: z.number(),
+        timezone: z.string()
+      })
+    )
+    .query(async ({ input }) => {
+      const fixed_offset = FixedOffsetZone.instance(DateTime.now().setZone(input.timezone).offset)
+      const start_date = DateTime.fromFormat(`1970-01-01 ${input.start_hour}`, "yyyy-MM-dd HH:mm", { zone: fixed_offset })
+      const end_date = start_date.plus({ minutes: input.period_length })
+      console.log(start_date.toString(), end_date.toString())
+      // To utc
+      const end_hour = end_date.toUTC().toJSDate();
+      const hour_to_date = start_date.toUTC().toJSDate()
+      console.log(end_hour, hour_to_date)
+      const overlapping_records = await prisma.school_periods.findMany({
+        where: {
+          school_id: input.school_id,
+          OR: [
+            {
+              AND: [
+                { start: { lte: hour_to_date } },
+                { end: { gte: hour_to_date } }
+              ]
+            },
+            {
+              AND: [
+                { start: { lte: end_hour } },
+                { end: { gte: end_hour } }
+              ]
+            },
+            {
+              AND: [
+                { period: input.period }
+              ]
+            }
+          ]
+        },
+        orderBy: {
+          period: "asc"
+        }
+      })
+
+      if (overlapping_records.length > 0) {
+        return { success: false, message: "The period hours cannot overlap with eachother" }
+      }
+      await prisma.school_periods.create({
+        data: {
+          School: { connect: { id: input.school_id } },
+          period: input.period,
+          start: hour_to_date,
+          end: end_hour
+        }
+      })
+    }),
   "set-curriculum": procedure
     .input(
       z.object({
-        curriculum: z.record(z.string(), z.object({
+        curriculum: z.record(z.string(), z.nullable(z.object({
           teacher_id: z.nullable(z.number()),
           amount: z.number()
-        })),
+        }))),
         class_ids: z.array(z.number()),
         school_id: z.number()
       })
     ).query(async ({ input }) => {
+      const changes_made: Record<string, string[]> = {}
       const { curriculum, class_ids, school_id } = input;
       for (const class_id of class_ids) {
-        Object.entries(curriculum).map(async ([subject, values]) => {
-          if (!values.teacher_id) {
-            return
+        const _class = await prisma.classes.findFirst({
+          where: {
+            id: class_id
           }
-          const exists = await prisma.class_subjects.findFirst({
-            where: {
-              school_id,
-              Class: { id: class_id },
-              Subject: { name: subject },
-              teacher_id: values.teacher_id,
-            }
-          })
-          if (exists) {
-            await prisma.class_subjects.updateMany({
+        })
+        if (!_class) {
+          return { success: false, message: "Class does not exist", changes: changes_made }
+        }
+        changes_made[_class.class_name] = []
+        for (const [subject, values] of Object.entries(curriculum)) {
+          if (values === null) {
+            const remove = await prisma.class_subjects.deleteMany({
               where: {
                 school_id,
                 Class: { id: class_id },
                 Subject: { name: subject },
-                teacher_id: values.teacher_id,
-              },
-              data: {
-                amount: values.amount
               }
             })
+            if (remove.count > 0) {
+              changes_made[_class.class_name].push(`Removed ${subject}`)
+
+            }
+
+
           } else {
-            const subject_id = await prisma.subjects.findFirst({
+
+
+            if (!values.teacher_id) {
+              return { success: false, message: `${subject} has no teacher selected`, changes: changes_made }
+            }
+            const exists = await prisma.class_subjects.findFirst({
               where: {
                 school_id,
-                name: subject
-              }
+                Class: { id: class_id },
+                Subject: { name: subject },
+              },
             })
-            if (!subject_id) {
-              return null
+            if (exists) {
+              const update = await prisma.class_subjects.updateMany({
+                where: {
+                  school_id,
+                  Class: { id: class_id },
+                  Subject: { name: subject },
+                },
+                data: {
+                  amount: values.amount,
+                  teacher_id: values.teacher_id
+                }
+              })
+              if (exists.amount != values.amount) {
+                changes_made[_class.class_name].push(`Updated amount for ${subject}: ${exists.amount} > ${values.amount}`)
+              }
+              if (exists.teacher_id != values.teacher_id) {
+                const [prev_teacher, teacher] = await prisma.teachers.findMany({
+                  where: {
+                    id: {
+                      in: [exists.teacher_id, values.teacher_id]
+                    }
+
+                  },
+                  include: {
+                    User: true
+                  }
+                })
+                changes_made[_class.class_name].push(`Updated teachers  for ${subject}: ${prev_teacher.User.name} ${prev_teacher.User.family_name} > ${teacher.User.name} ${teacher.User.family_name}`)
+              }
+            } else {
+              const subject_id = await prisma.subjects.findFirst({
+                where: {
+                  school_id,
+                  name: subject
+                }
+              })
+              if (!subject_id) {
+                return { success: false, message: "Subject doens't exist", changes: changes_made }
+              }
+              const create = await prisma.class_subjects.create({
+                data: {
+                  School: { connect: { id: school_id } },
+                  Class: { connect: { id: class_id } },
+                  Subject: { connect: { id: subject_id.id } },
+                  teacher_id: values.teacher_id,
+                  amount: values.amount
+                },
+              })
+              changes_made[_class.class_name].push(`Added subject: ${subject}: ${create.amount} `)
+
             }
-            await prisma.class_subjects.create({
-              data: {
-                School: { connect: { id: school_id } },
-                Class: { connect: { id: class_id } },
-                Subject: { connect: { id: subject_id.id } },
-                teacher_id: values.teacher_id,
-                amount: values.amount
-              }
-            })
           }
-        })
+          if (changes_made[_class.class_name].length === 0) {
+            changes_made[_class.class_name].push("No changes made")
+          }
+        }
+
       }
-      return { success: true }
+      return { success: true, message: `Successfully set the curriculum for classes.`, changes: changes_made }
 
     }),
   "get-available-teacher-subjects": procedure

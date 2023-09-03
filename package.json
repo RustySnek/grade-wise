@@ -26,6 +26,8 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "fs": "^0.0.1-security",
+    "luxon": "^3.4.2",
+    "moment-timezone": "^0.5.43",
     "next": "13.4.12",
     "next-auth": "^4.22.3",
     "papaparse": "^5.4.1",
@@ -38,6 +40,7 @@
   },
   "devDependencies": {
     "@types/formidable": "^3.4.0",
+    "@types/luxon": "^3.3.2",
     "formidable": "^2.1.2",
     "prisma": "^5.1.1"
   }

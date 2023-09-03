@@ -20,6 +20,7 @@ model schools {
   User                users[]
   Subjects            subjects[]
   class_subjects      class_subjects[]
+  school_periods      school_periods[]
 }
 
 model classes {
@@ -100,4 +101,13 @@ model class_subjects {
   School     schools  @relation(fields: [school_id], references: [id])
   Class      classes  @relation(fields: [class_id], references: [id])
   Subject    subjects @relation(fields: [subject_id], references: [id])
+}
+
+model school_periods {
+  id        Int      @id @default(autoincrement())
+  start     DateTime
+  end       DateTime
+  period    Int
+  school_id Int
+  School    schools  @relation(fields: [school_id], references: [id])
 }
