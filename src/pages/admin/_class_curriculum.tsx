@@ -41,6 +41,7 @@ const ClassCurriculum = () => {
   }
   const handle_curriculum_submit = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
+
     set_response_changes({});
     set_response_message("")
     const class_ids = selectedKeys
